@@ -40,9 +40,9 @@ To reproduce MetaLR, you need to
 
 ```
 cd MetaLR_POCUS
-python -u train.py --model ResNet --depth 18 --seed 0\
-                    --workers 4 --max-epoch 30 --batch-size 128\
-                    --lr 0.01 --hyper-lr 0.03
+python -u train.py --seed 0 --workers 4\
+                   --max-epoch 30 --batch-size 128\
+                   --lr 0.01 --hyper-lr 0.1
 ```
 
 ## The Learned LR Curves
