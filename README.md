@@ -8,7 +8,7 @@ In medical image analysis, we find that model fine-tuning plays a crucial role i
 
 Previous works fix transferable layers in pre-trained models to prevent them from catastrophic forgetting, which is inflexible and labor-expensive to find the optimal scheme. MetaLR learns appropriate LRs for different layers from feedback on model generalization, preventing highly transferable layers from forgetting their medical representation abilities and driving less transferable layers to adapt actively to new domains.
 
-<img src="https://github.com/Schuture/MetaLR/blob/main/Figs/motivation.png" width = "800" height = "400" alt="Motivation for MetaLR" align=center />
+<img src="Figs/motivation.png" width = "800" height = "400" alt="Motivation for MetaLR" align=center />
 
 
 ## 2. Algorithm
@@ -47,7 +47,7 @@ python -u train.py --seed 0 --workers 4\
 
 ## 4. The Learned LR Curves
 
-<img src="https://github.com/Schuture/MetaLR/blob/main/Figs/lr_curves.png" width = "800" height = "250" alt="Motivation for MetaLR" align=center />
+<img src="Figs/lr_curves.png" width = "800" height = "250" alt="Motivation for MetaLR" align=center />
 
 
 ## 5. Environment
