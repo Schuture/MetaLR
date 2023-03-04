@@ -2,7 +2,7 @@
 
 This repository contains the codes for the paper "MetaLR: Meta-tuning of Learning Rates for Transfer Learning in Medical Imaging".
 
-## Introduction
+## 1. Introduction
 
 In medical image analysis, we find that model fine-tuning plays a crucial role in adapting medical knowledge to target tasks. We propose a meta-learning-based LR tuner, MetaLR, to make different layers efficiently co-adapt to downstream tasks according to their transferabilities in different domains.
 
@@ -11,7 +11,7 @@ Previous works fix transferable layers in pre-trained models to prevent them fro
 <img src="https://github.com/Schuture/MetaLR/blob/main/Figs/motivation.png" width = "800" height = "400" alt="Motivation for MetaLR" align=center />
 
 
-## Algorithm
+## 2. Algorithm
 
 We use online meta-learning to tune layer-wise LRs. We denote the LR and model parameters for the layer $j$ at the iteration $t$ as $\alpha_j^t$ and $\theta_j^t$. The LR scheduling scheme $\alpha = \\{ \alpha_j^t: j=1, ..., d; ~t=1, ..., T\\}$ is what MetaLR wants to learn, affecting which local optimal $\theta^*(\alpha)$ the model parameters $\theta^t = \\{ \theta_j^t: j=1, ..., d\\}$ will converge to. The algorithm iteratively run the following three steps:
 
@@ -30,7 +30,7 @@ where $\eta$ is the hyper-LR.
 $$\theta_j^{t+1} = \theta_j^t - \alpha_j^{t+1} \nabla_{\theta_j} (\frac{1}{n}\sum_{i=1}^n L(\Phi(x_i,\theta_j^t),y_i)).$$
 
 
-## Quick Start
+## 3. Quick Start
 
 To reproduce MetaLR, you need to 
 
@@ -45,7 +45,7 @@ python -u train.py --seed 0 --workers 4\
                    --lr 0.01 --hyper-lr 0.1
 ```
 
-## The Learned LR Curves
+## 4. The Learned LR Curves
 
 <img src="https://github.com/Schuture/MetaLR/blob/main/Figs/lr_curves.png" width = "800" height = "250" alt="Motivation for MetaLR" align=center />
 
