@@ -4,8 +4,11 @@ This repository contains the codes for the paper "MetaLR: Meta-tuning of Learnin
 
 ## Introduction
 
-In medical image analysis, we find that model fine-tuning plays a crucial role in adapting medical knowledge to target tasks. We propose a meta-learning-based LR tuner, MetaLR, to make different layers efficiently co-adapt to downstream tasks according to their transferabilities in different domains. MetaLR learns appropriate LRs for different layers from feedback on model generalization, preventing highly transferable layers from forgetting their medical representation abilities and driving less transferable layers to adapt actively to new domains.
+In medical image analysis, we find that model fine-tuning plays a crucial role in adapting medical knowledge to target tasks. We propose a meta-learning-based LR tuner, MetaLR, to make different layers efficiently co-adapt to downstream tasks according to their transferabilities in different domains.
 
+Previous works fix transferable layers in pre-trained models to prevent them from catastrophic forgetting, which is inflexible and labor-expensive to find the optimal scheme. MetaLR learns appropriate LRs for different layers from feedback on model generalization, preventing highly transferable layers from forgetting their medical representation abilities and driving less transferable layers to adapt actively to new domains.
+
+<img src="https://github.com/Schuture/MetaLR/blob/main/Figs/motivation.png" width = "800" height = "400" alt="Motivation for MetaLR" align=center />
 
 
 ## Algorithm
@@ -25,6 +28,39 @@ where $\eta$ is the hyper-LR.
 (3) Finally, the updated LRs can be employed to optimize the model parameters through gradient descent truly.
 
 $$\theta_j^{t+1} = \theta_j^t - \alpha_j^{t+1} \nabla_{\theta_j} (\frac{1}{n}\sum_{i=1}^n L(\Phi(x_i,\theta_j^t),y_i)).$$
+
+
+## Quick Start
+
+To reproduce MetaLR, you need to 
+
+1. Unzip POCUS dataset in *MetaLR_POCUS/data* folder and unzip the USCL pre-trained model in *MetaLR_POCUS/pretrained* folder.
+
+2. Run
+
+```
+cd MetaLR_POCUS
+python -u train.py --model ResNet --depth 18 --seed 0\
+                    --workers 4 --max-epoch 30 --batch-size 128\
+                    --lr 0.01 --hyper-lr 0.03
+```
+
+## The Learned LR Curves
+
+<img src="https://github.com/Schuture/MetaLR/blob/main/Figs/lr_curves.png" width = "800" height = "250" alt="Motivation for MetaLR" align=center />
+
+
+## 5. Environment
+The code is developed with an Intel(R) Xeon(R) W-2235 CPU @ 3.80GHz and a single NVIDIA RTX A6000 GPU.
+
+The install script *requirements.txt* has been tested on an Ubuntu 20.04.4 LTS system.
+
+:cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud::cloud:
+
+
+## 6. License
+
+Licensed under an MIT license.
 
 
 
