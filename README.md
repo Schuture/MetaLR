@@ -1,6 +1,6 @@
 # MetaLR
 
-This repository contains the codes for the paper "MetaLR: Meta-tuning of Learning Rates for Transfer Learning in Medical Imaging".
+This repository contains the codes for the paper "MetaLR: Meta-tuning of Learning Rates for Transfer Learning in Medical Imaging" [[PDF](https://arxiv.org/pdf/2206.01408v2.pdf)] early accepted at MICCAI 2023.
 
 ## 1. Introduction
 
