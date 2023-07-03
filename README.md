@@ -4,7 +4,7 @@ This repository contains the codes for the paper "MetaLR: Meta-tuning of Learnin
 
 ## 1. Introduction
 
-In medical image analysis, we find that model fine-tuning plays a crucial role in adapting medical knowledge to target tasks. We propose a meta-learning-based LR tuner, MetaLR, to make different layers efficiently co-adapt to downstream tasks according to their transferabilities in different domains.
+In medical image analysis, we find that model fine-tuning plays a crucial role in adapting medical knowledge to target tasks. We propose a meta-learning-based LR tuner, MetaLR, to make different layers efficiently co-adapt to downstream tasks according to their transferabilities across different domains.
 
 Previous works fix transferable layers in pre-trained models to prevent them from catastrophic forgetting, which is inflexible and labor-expensive to find the optimal scheme. MetaLR learns appropriate LRs for different layers from feedback on model generalization, preventing highly transferable layers from forgetting their medical representation abilities and driving less transferable layers to adapt actively to new domains.
 
