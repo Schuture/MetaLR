@@ -1,6 +1,6 @@
 # MetaLR
 
-This repository contains the codes for the paper "MetaLR: Meta-tuning of Learning Rates for Transfer Learning in Medical Imaging" [[PDF](https://arxiv.org/pdf/2206.01408v2.pdf)] early accepted at MICCAI 2023.
+This repository contains the codes for the paper "MetaLR: Meta-tuning of Learning Rates for Transfer Learning in Medical Imaging" [[PDF](https://arxiv.org/pdf/2206.01408v2.pdf)] (Chen, Yixiong, et al.) early accepted at MICCAI 2023.
 
 ## 1. Introduction
 
@@ -61,6 +61,21 @@ The install script *requirements.txt* has been tested on an Ubuntu 20.04.4 LTS s
 ## 6. License
 
 Licensed under an MIT license.
+
+## 7. Citation
+</div>
+
+```
+@inproceedings{chen2023metalr,
+  title={MetaLR: meta-tuning of learning rates for transfer learning in medical imaging},
+  author={Chen, Yixiong and Liu, Li and Li, Jingxian and Jiang, Hua and Ding, Chris and Zhou, Zongwei},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={706--716},
+  year={2023},
+  organization={Springer}
+}
+```
+---
 
 
 
